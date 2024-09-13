@@ -16,6 +16,7 @@ public class FixMessageParser {
     // Constants for the FIX message format with delimeter '^'. For example: 8=FIX.4.2^35=D^...^10=003^
     private static final byte[] FIX_MESSAGE = "8=FIX.4.2^9=112^35=D^49=CLIENT12^56=BROKER12^34=215^52=20230905-09:30:00^11=123456^55=IBM^54=1^59=0^60=20230905-09:30:00^957=2^958=ExecutionStyle^959=String^960=Aggressive^958=ExecutionStyle^959=String^960=Passive^10=003^".getBytes(); 
     private static final int THREAD_POOL_SIZE = 10;
+    private static final int ITERATIONS = 1_000_000;
 
     // Mapping of FIX tags to their field names
     static FixTagLoader fixTag = new FixTagLoader();
@@ -239,10 +240,9 @@ public class FixMessageParser {
     }
 
     public static void main(String[] args) {
-        benchmarkSingleThreadedParsing(1000000);
-        benchmarkMultiThreadedParsing(1000000);
+        benchmarkSingleThreadedParsing(ITERATIONS);
+        benchmarkMultiThreadedParsing(ITERATIONS);
 
-        
         FixMessageParser parser = new FixMessageParser();        
         Map<String, String> parsedMessage = parser.parse(FIX_MESSAGE);
         System.out.println("Parsed Message: " + parsedMessage);

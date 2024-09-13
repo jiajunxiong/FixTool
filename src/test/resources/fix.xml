@@ -1,0 +1,34 @@
+<fixProtocol>
+    <field name="8" description="BeginString"/>
+    <field name="9" description="BodyLength"/>
+    <field name="10" description="CheckSum"/>
+    <field name="11" description="ClOrdID"/>
+    <field name="34" description="MsgSeqNum"/>
+    <field name="35" description="MsgType"/>
+    <field name="37" description="OrderID"/>
+    <field name="38" description="OrderQty"/>
+    <field name="40" description="OrdType"/>    
+    <field name="44" description="Price"/>
+    <field name="48" description="SecurityID"/>
+    <field name="49" description="SenderCompID"/>
+    <field name="52" description="SendingTime"/>
+    <field name="54" description="Side"/>
+    <field name="55" description="Symbol"/>
+    <field name="56" description="TargetCompID"/>
+    <field name="59" description="TimeInForce"/>
+    <field name="60" description="TransactTime"/>
+    <field name="150" description="ExecType"/>
+    <field name="151" description="LeavesQty"/>
+    <field name="167" description="SecurityType"/>
+    <field name="223" description="SettlType"/>
+    <field name="336" description="TradingSessionID"/>
+    <field name="339" description="TransactTime"/>
+    <field name="957" description="NoStrategyParameters"/>
+    <repeatingGroup name="957">
+        <group>
+            <field name="958" description="StrategyParameterName"/>
+            <field name="959" description="StrategyParameterType"/>
+            <field name="960" description="StrategyParameterValue"/>
+        </group>
+    </repeatingGroup>
+</fixProtocol>
